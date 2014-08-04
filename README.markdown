@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/twilightcoders/workflow.png?branch=master)](https://travis-ci.org/twilightcoders/workflow) Tested with [different Ruby and Rails versions](https://travis-ci.org/twilightcoders/workflow)
+[![Build Status](https://travis-ci.org/TwilightCoders/workflow.svg?branch=master)](https://travis-ci.org/TwilightCoders/workflow) Tested with [different Ruby and Rails versions](https://travis-ci.org/twilightcoders/workflow)
 
 
 What is workflow?
