@@ -5,8 +5,10 @@ require 'workflow/errors'
 
 module Workflow
   class Specification
+
     attr_accessor :states, :initial_state, :meta,
-      :on_transition_proc, :before_transition_proc, :after_transition_proc, :on_error_proc, :on_unavailable_transition_proc
+      :on_transition_proc, :before_transition_proc,
+      :after_transition_proc, :on_error_proc, :on_unavailable_transition_proc
 
     def initialize(meta = {}, &specification)
       @states = Hash.new
@@ -20,10 +22,18 @@ module Workflow
 
     private
 
-    def state(name, value=nil, meta = {:meta => {}}, &events_and_etc)
-      # meta[:meta] to keep the API consistent..., gah
+    def state(name, value=nil, options=nil, &events_and_etc)
+
+      if value.is_a? Hash
+        value = nil
+        options = value
+      end
+
       value ||= name
-      new_state = Workflow::State.new(name, value, self, meta[:meta])
+      options ||= {}
+      meta.reverse_merge! meta: {}
+
+      new_state = Workflow::State.new(name, value, self, options[:meta])
       @initial_state = new_state if @states.empty?
       @states[name.to_sym] = new_state
       @scoped_state = new_state
