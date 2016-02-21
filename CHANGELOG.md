@@ -3,8 +3,8 @@
 ### Release 1.3.1
 
 * Removed support for Ruby < 2.0.0.
-  If you still need this older versions despite security issues and missing updates, you can continue using
-  geekq/workflow 1.2.0 or older. In your Gemfile put
+  If you still need older versions despite security issues and missing updates, you can continue using
+  geekq/workflow 1.3.0 or older. In your Gemfile put
 
       gem 'workflow', '~> 1.2.0'
 
