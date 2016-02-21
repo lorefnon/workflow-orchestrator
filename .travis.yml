@@ -8,9 +8,6 @@ gemfile:
 
 matrix:
   include:
-    - rvm: 1.9.3
-      gemfile: gemfiles/Gemfile.rails-3.x
-
     - rvm: 2.0.0
       gemfile: gemfiles/Gemfile.rails-3.x
 
@@ -33,4 +30,7 @@ matrix:
       gemfile: gemfiles/Gemfile.rails-4.2
 
     - rvm: 2.2.3
+      gemfile: gemfiles/Gemfile.rails-4.2
+
+    - rvm: 2.2.4
       gemfile: gemfiles/Gemfile.rails-4.2
