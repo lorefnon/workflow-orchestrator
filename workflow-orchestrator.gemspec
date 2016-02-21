@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'workflow/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "workflow"
+  gem.name          = "workflow-orchestrator"
   gem.version       = Workflow::VERSION
   gem.authors       = ["Lorefnon"]
   gem.email         = ["lorefnon@gmail.com"]
