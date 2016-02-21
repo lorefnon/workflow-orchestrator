@@ -95,9 +95,13 @@ module Workflow
 
     def process_event!(name, *args)
       event = current_state.events.first_applicable(name, self)
-      raise NoTransitionAllowed.new(
-        "There is no event #{name.to_sym} defined for the #{current_state} state") \
-        if event.nil?
+      if event.nil?
+        run_on_error(NoTransitionAllowed.new(
+          "There is no event #{name.to_sym} defined for the #{current_state} state"), 
+          current_state, 
+          nil, name, *args)
+        return false
+      end
       @halted_because = nil
       @halted = false
 
@@ -175,7 +179,7 @@ module Workflow
 
     def run_on_error(error, from, to, event, *args)
       if spec.on_error_proc
-        instance_exec(error, from.name, to.name, event, *args, &spec.on_error_proc)
+        instance_exec(error, from.name, ( to.name rescue nil ), event, *args, &spec.on_error_proc)
         halt(error.message)
       else
         raise error
