@@ -689,6 +689,8 @@ Workflow Orchestrator is maintained by [Lorefnon](https://lorefnon.me) along wit
 
 This project was derived (forked) from the gem [geekq/workflow](https://github.com/geekq/workflow) by Vladimir Dobriakov, which was forked from the original repo authored by Ryan Allen. Both appear to be unmaintained as of 2016. 
 
+While it is largely compatible with geekq/workflow but breaking API changes will be introduced in coming versions. In addition, the intent is to extract the persistence and rails dependent features in different gems, leaving only the FSM management features in the core. 
+
 History
 -------
 
