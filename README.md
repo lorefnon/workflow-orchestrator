@@ -120,38 +120,6 @@ If you're using ActiveRecord, Workflow will by default use a "workflow_state" co
 **Important**: If you're interested in graphing your workflow state machine, you will also need to
 install the `activesupport` and `ruby-graphviz` gems.
 
-Versions up to and including 1.0.0 are also available as a single file download -
-[lib/workflow.rb file](https://github.com/geekq/workflow/blob/v1.0.0/lib/workflow.rb).
-
-Ruby 1.9
---------
-
-Workflow gem does not work with some Ruby 1.9
-builds due to a known bug in Ruby 1.9. Either
-
-* use newer ruby build, 1.9.2-p136 and -p180 tested to work
-* or compile your Ruby 1.9 from source
-* or [comment out some lines in workflow](http://github.com/geekq/workflow/issues#issue/6)
-(reduces functionality).
-
-Examples
---------
-
-After installation or downloading of the library you can easily try out
-all the example code from this README in irb.
-
-```bash
-$ irb
-```
-```ruby
-require 'rubygems'
-require 'workflow'
-```
-
-Now just copy and paste the source code from the beginning of this README
-file snippet by snippet and observe the output.
-
-
 Transition event handler
 ------------------------
 
