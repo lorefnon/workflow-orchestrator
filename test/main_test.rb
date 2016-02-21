@@ -210,8 +210,8 @@ class MainTest < ActiveRecordTestCase
     c.class_eval do
       include Workflow
       workflow do
-        state :main, :meta => {:importance => 8}
-        state :supplemental, :meta => {:importance => 1}
+        state :main, 1, :meta => {:importance => 8}
+        state :supplemental, 2, :meta => {:importance => 1}
       end
     end
     assert_equal 1, c.workflow_spec.states[:supplemental].meta[:importance]
@@ -235,7 +235,7 @@ class MainTest < ActiveRecordTestCase
 
   test 'initial state immediately set as ActiveRecord attribute for new objects' do
     o = Order.create(:title => 'new object')
-    assert_equal 'submitted', o.read_attribute(:workflow_state)
+    assert_equal 'submitted', o.read_attribute(:workflow_state).to_s
   end
 
   test 'question methods for state' do

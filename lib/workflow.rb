@@ -10,20 +10,33 @@ module Workflow
     attr_reader :workflow_spec
 
     def workflow_column(column_name=nil)
-      if column_name
-        @workflow_state_column_name = column_name.to_sym
-      end
-      if !instance_variable_defined?('@workflow_state_column_name') && superclass.respond_to?(:workflow_column)
+      #I guess we want to preserve the api???
+      @workflow_state_column_name ||= column_name
+      if @workflow_state_column_name.nil? && superclass.respond_to?(:workflow_column)
         @workflow_state_column_name = superclass.workflow_column
       end
       @workflow_state_column_name ||= :workflow_state
+
     end
 
-    def workflow(&specification)
+    def workflow(column=nil,&specification)
+      column = workflow_column(column)
       assign_workflow Specification.new(Hash.new, &specification)
+
+      inject_setter_for_state
     end
 
     private
+
+    #allow setting of workflow_state by name, and interpolate the value
+    def inject_setter_for_state
+      define_method("#{@workflow_state_column_name}=") do |val|
+        
+        matching_state = spec.states.select{|k,v| v.name.to_s == val.to_s}.values.first
+        val = matching_state.value if matching_state
+        super(val)
+      end
+    end
 
     # Creates the convinience methods like `my_transition!`
     def assign_workflow(specification_object)
@@ -76,8 +89,12 @@ module Workflow
   module InstanceMethods
 
     def current_state
-      loaded_state = load_workflow_state
-      res = spec.states[loaded_state.to_sym] if loaded_state
+      loaded_state_value = load_workflow_state
+      if loaded_state_value
+        loaded_state_name = spec.states.select{|k,v| v.value.to_s == loaded_state_value.to_s}.keys.first
+      end
+
+      res = spec.states[loaded_state_name.to_sym] if loaded_state_name
       res || spec.initial_state
     end
 
@@ -108,28 +125,29 @@ module Workflow
       check_transition(event)
 
       from = current_state
-      to = spec.states[event.transitions_to]
+      to_state = spec.states[event.transitions_to]
+      to_value = to_state.value
 
-      run_before_transition(from, to, name, *args)
+      run_before_transition(from, to_state, name, *args)
       return false if @halted
 
       begin
         return_value = run_action(event.action, *args) || run_action_callback(event.name, *args)
       rescue StandardError => e
-        run_on_error(e, from, to, name, *args)
+        run_on_error(e, from, to_state, name, *args)
       end
 
       return false if @halted
 
-      run_on_transition(from, to, name, *args)
+      run_on_transition(from, to_state, name, *args)
 
-      run_on_exit(from, to, name, *args)
+      run_on_exit(from, to_state, name, *args)
 
-      transition_value = persist_workflow_state to.to_s
+      transition_value = persist_workflow_state to_value
 
-      run_on_entry(to, from, name, *args)
+      run_on_entry(to_state, from, name, *args)
 
-      run_after_transition(from, to, name, *args)
+      run_after_transition(from, to_state, name, *args)
 
       return_value.nil? ? transition_value : return_value
     end
@@ -246,6 +264,7 @@ module Workflow
     end
 
     def persist_workflow_state(new_value)
+
       @workflow_state = new_value
     end
   end
