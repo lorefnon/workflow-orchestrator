@@ -4,8 +4,6 @@ A ruby DSL for modeling business logic as [Finite State Machines](https://en.wik
 
 The aim of this library is to make the expression of these concepts as clear as possible, utilizing the expressiveness of ruby language, and using similar terminology as found in state machine theory.
 
-This is an experimental fork of [geekq/workflow](https://github.com/geekq/workflow), aimed towards Rails 5 compatibility, a leaner codebase and removal of legacy features.
-
 ## Concepts
 
 - **State:** A workflow is in exactly one state at a time. State may optionally be persisted using ActiveRecord.
