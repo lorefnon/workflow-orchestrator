@@ -77,7 +77,7 @@ of possible events and other meta information:
 On Ruby 1.9 and above, you can check whether a state comes before or
 after another state (by the order they were defined):
 
-    article.current_state
+    article.current_state.name
     => being_reviewed
     article.current_state < :accepted
     => true
