@@ -1,3 +1,5 @@
+# Workflow Orchestrator
+
 [![Build Status](https://travis-ci.org/TwilightCoders/workflow.svg?branch=master)](https://travis-ci.org/TwilightCoders/workflow) Tested with [different Ruby and Rails versions](https://travis-ci.org/twilightcoders/workflow)
 
 Note: you can find documentation for specific workflow rubygem versions
