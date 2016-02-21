@@ -1,31 +1,21 @@
-# Workflow Orchestrator
+# Workflow Orchestrator [![Build Status](https://travis-ci.org/lorefnon/workflow-orchestrator.svg?branch=master)](https://travis-ci.org/lorefnon/workflow-orchestrator)
 
-[![Build Status](https://travis-ci.org/lorefnon/workflow-orchestrator.svg?branch=master)](https://travis-ci.org/lorefnon/workflow-orchestrator)
+A ruby DSL for modeling business logic as [Finite State Machines](https://en.wikipedia.org/wiki/Finite-state_machine).
 
-What is workflow?
------------------
+The aim of this library is to make the expression of these concepts as clear as possible, utilizing the expressiveness of ruby language, and using similar terminology as found in state machine theory.
 
-Workflow is a finite-state-machine-inspired API for modeling and
-interacting with what we tend to refer to as 'workflow'.
+This is an experimental fork of [geekq/workflow](https://github.com/geekq/workflow), aimed towards Rails 5 compatibility, a leaner codebase and removal of legacy features.
 
-A lot of business modeling tends to involve workflow-like concepts, and
-the aim of this library is to make the expression of these concepts as
-clear as possible, using similar terminology as found in state machine
-theory.
+## Concepts
 
-So, a workflow has a state. It can only be in one state at a time. When
-a workflow changes state, we call that a transition. Transitions occur
-on an event, so events cause transitions to occur. Additionally, when an
-event fires, other arbitrary code can be executed, we call those actions.
-So any given state has a bunch of events, any event in a state causes a
-transition to another state and potentially causes code to be executed
-(an action). We can hook into states when they are entered, and exited
-from, and we can cause transitions to fail (guards), and we can hook in
-to every transition that occurs ever for whatever reason we can come up
-with.
+- **State:** A workflow is in exactly one state at a time. State may optionally be persisted using ActiveRecord.
+- **State transition:** Change of state can be observed and intercepted
+- **Events:** Events cause state transitions to occur
+- **Actions:** Actions constitute of parts of our business logic which are executed in response to state transitions.
 
-Now, all that's a mouthful, but we'll demonstrate the API bit by bit
-with a real-ish world example.
+We can hook into states when they are entered, and exited from, and we can cause transitions to fail (guards), and we can hook in to every transition that occurs ever for whatever reason we can come up with.
+
+## Example
 
 Let's say we're modeling article submission from journalists. An article
 is written, then submitted. When it's submitted, it's awaiting review.
