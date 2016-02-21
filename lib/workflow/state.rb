@@ -1,5 +1,8 @@
 module Workflow
   class State
+
+    include Comparable
+
     attr_accessor :name, :value, :events, :meta, :on_entry, :on_exit
     attr_reader :spec
 
@@ -23,14 +26,10 @@ module Workflow
       node
     end
 
-
-    if RUBY_VERSION >= '1.9'
-      include Comparable
-      def <=>(other_state)
-        states = spec.states.keys
-        raise ArgumentError, "state `#{other_state}' does not exist" unless states.include?(other_state.to_sym)
-        states.index(self.to_sym) <=> states.index(other_state.to_sym)
-      end
+    def <=>(other_state)
+      states = spec.states.keys
+      raise ArgumentError, "state `#{other_state}' does not exist" unless states.include?(other_state.to_sym)
+      states.index(self.to_sym) <=> states.index(other_state.to_sym)
     end
 
     def to_s
