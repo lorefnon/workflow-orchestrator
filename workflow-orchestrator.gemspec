@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Lorefnon"]
   gem.email         = ["lorefnon@gmail.com"]
   gem.description   = <<DOC
-A ruby DSL for modeling business logic as [Finite State Machines](https://en.wikipedia.org/wiki/Finite-state_machine).
+A ruby DSL for modeling business logic as Finite State Machines.
 
 The aim of this library is to make the expression of these concepts as clear as possible, utilizing the expressiveness of ruby language, and using similar terminology as found in state machine theory.
 DOC
@@ -37,6 +37,6 @@ DOC
   gem.add_development_dependency 'pry-byebug'
   gem.add_development_dependency 'ruby-graphviz', ['~> 1.0.0']
   
-  gem.required_ruby_version = '>= 1.9.2'
+  gem.required_ruby_version = '>= 2.0.0'
 end
 
