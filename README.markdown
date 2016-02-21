@@ -1,11 +1,6 @@
 # Workflow Orchestrator
 
-[![Build Status](https://travis-ci.org/TwilightCoders/workflow.svg?branch=master)](https://travis-ci.org/TwilightCoders/workflow) Tested with [different Ruby and Rails versions](https://travis-ci.org/twilightcoders/workflow)
-
-Note: you can find documentation for specific workflow rubygem versions
-at http://rubygems.org/gems/workflow : select a version (optional,
-default is latest release), click "Documentation" link. When reading on
-github.com, the README refers to the upcoming release.
+[![Build Status](https://travis-ci.org/lorefnon/workflow-orchestrator.svg?branch=master)](https://travis-ci.org/lorefnon/workflow-orchestrator)
 
 What is workflow?
 -----------------
@@ -899,14 +894,6 @@ If both a function with a name according to naming convention and the
 `on_entry`/`on_exit` block are given, then only `on_entry`/`on_exit` block is used.
 
 
-Support
--------
-
-### Reporting bugs
-
-<http://github.com/geekq/workflow/issues>
-
-
 About
 -----
 
@@ -921,4 +908,3 @@ Copyright (c) 2007-2008 Ryan Allen, FlashDen Pty Ltd
 Based on the work of Ryan Allen and Scott Barron
 
 Licensed under MIT license, see the MIT-LICENSE file.
-
