@@ -53,6 +53,4 @@ class ActiveRecordScopesTest < ActiveRecordTestCase
   test 'have "without_accepted_state" scope' do
     assert_respond_to Article, :without_accepted_state
   end
-
 end
-
