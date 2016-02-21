@@ -1,13 +1,15 @@
 # Changelog
 
-### Release 1.3.0
+### Release 1.3.1
 
 * Removed support for Ruby < 2.0.0.
   If you still need this older versions despite security issues and missing updates, you can continue using
   geekq/workflow 1.2.0 or older. In your Gemfile put
 
       gem 'workflow', '~> 1.2.0'
-* Improved callback method handling: #113 and #125
+
+### Release 1.3.0
+
 * Incorporated following pull requests from geekq/workflow :
   * [#172](https://github.com/geekq/workflow/pull/172) Add documentation for without_name_state scopes
   * [#112](https://github.com/geekq/workflow/pull/112) Negative class level and instance level scopes
@@ -16,6 +18,7 @@
   * [#157](https://github.com/geekq/workflow/pull/157) Small Correction in README
   * [#158](https://github.com/geekq/workflow/pull/158) Support for enumerated state values
   * [#160](https://github.com/geekq/workflow/pull/160) Do not attempt to draw metadata
+* Improved callback method handling: #113 and #125
 
 ## Previous Releases (geekq/workflow)
 
