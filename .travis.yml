@@ -31,3 +31,6 @@ matrix:
 
     - rvm: 2.2.2
       gemfile: gemfiles/Gemfile.rails-4.2
+
+    - rvm: 2.2.3
+      gemfile: gemfiles/Gemfile.rails-4.2
