@@ -855,9 +855,16 @@ If both a function with a name according to naming convention and the
 About
 -----
 
-Author: Vladimir Dobriakov, <http://www.mobile-web-consulting.de>, <http://blog.geekq.net/>
+Workflow Orchestrator is maintained by [Lorefnon](https://lorefnon.me) along with [many contributors](https://github.com/lorefnon/workflow-orchestrator/graphs/contributors).
 
-Copyright (c) 2010-2014 Vladimir Dobriakov, www.mobile-web-consulting.de
+This project was derived (forked) from the gem [geekq/workflow](https://github.com/geekq/workflow) by Vladimir Dobriakov, which appears to be unmaintained at the moment. 
+
+History
+-------
+
+Copyright (c) 2016 Lorefnon
+
+Copyright (c) 2010-2014 Vladimir Dobriakov
 
 Copyright (c) 2008-2009 Vodafone
 
