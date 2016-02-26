@@ -1,6 +1,6 @@
 # Workflow Orchestrator 
 
-[![Build Status](https://travis-ci.org/lorefnon/workflow-orchestrator.svg?branch=master)](https://travis-ci.org/lorefnon/workflow-orchestrator) [![Dependency Status](https://gemnasium.com/lorefnon/workflow-orchestrator.svg)](https://gemnasium.com/lorefnon/workflow-orchestrator) [![Stories in Ready](https://badge.waffle.io/lorefnon/workflow-orchestrator.png?label=ready&title=Ready)](https://waffle.io/lorefnon/workflow-orchestrator) [![Inline docs](http://inch-ci.org/github/lorefnon/workflow-orchestrator.svg?branch=master)](http://inch-ci.org/github/lorefnon/workflow-orchestrator)
+[![Build Status](https://travis-ci.org/lorefnon/workflow-orchestrator.svg?branch=master)](https://travis-ci.org/lorefnon/workflow-orchestrator) [![Dependency Status](https://gemnasium.com/lorefnon/workflow-orchestrator.svg)](https://gemnasium.com/lorefnon/workflow-orchestrator) [![Stories in Ready](https://badge.waffle.io/lorefnon/workflow-orchestrator.png?label=ready&title=Ready)](https://waffle.io/lorefnon/workflow-orchestrator) [![Inline docs](http://inch-ci.org/github/lorefnon/workflow-orchestrator.svg?branch=master)](http://inch-ci.org/github/lorefnon/workflow-orchestrator) [![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](http://www.rubydoc.info/github/lorefnon/workflow-orchestrator/master)
 
 A ruby DSL for modeling business logic as [Finite State Machines](https://en.wikipedia.org/wiki/Finite-state_machine).
 
@@ -153,23 +153,6 @@ article2.submit!
 article2.review!('Homer Simpson') # => [Homer Simpson] is now reviewing the article
 ```
 
-### The old, deprecated way
-
-The old way, using a block is still supported but deprecated:
-
-```ruby
-event :review, :transitions_to => :being_reviewed do |reviewer|
-  # store the reviewer
-end
-```
-
-We've noticed, that mixing the list of events and states with the blocks
-invoked for particular transitions leads to a bumpy and poorly readable code
-due to a deep nesting. We tried (and dismissed) lambdas for this. Eventually
-we decided to invoke an optional user defined callback method with the same
-name as the event (convention over configuration) as explained before.
-
-
 Integration with ActiveRecord
 -----------------------------
 
@@ -226,8 +209,7 @@ Order.without_pending_state
 
 ### Custom workflow database column
 
-[meuble](http://imeuble.info/) contributed a solution for using
-custom persistence column easily, e.g. for a legacy database schema:
+A custom persistence column can be used for legacy database schema:
 
 ```ruby
 class LegacyOrder < ActiveRecord::Base
@@ -238,7 +220,7 @@ class LegacyOrder < ActiveRecord::Base
 end
 ```
 
-You can also set the column name inline into the workflow block:
+It is also possible to set the column name inline into the workflow block:
 
 ```ruby
 class LegacyOrder < ActiveRecord::Base
