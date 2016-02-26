@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/lorefnon/workflow-orchestrator.png?label=ready&title=Ready)](https://waffle.io/lorefnon/workflow-orchestrator)
 # Workflow Orchestrator [![Build Status](https://travis-ci.org/lorefnon/workflow-orchestrator.svg?branch=master)](https://travis-ci.org/lorefnon/workflow-orchestrator)
 
 A ruby DSL for modeling business logic as [Finite State Machines](https://en.wikipedia.org/wiki/Finite-state_machine).
