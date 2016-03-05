@@ -101,7 +101,7 @@ event (transition) defined for the current state.
 Installation
 ------------
 
-    `gem install workflow`
+    `gem install workflow-orchestrator`
     
     `include Workflow` in your model.
 
