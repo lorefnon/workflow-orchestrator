@@ -24,5 +24,4 @@ end
 
 appraise "rails-3" do
   gem "activerecord", "~>3.2", group: :development
-  gem "test-unit", group: :development
 end
