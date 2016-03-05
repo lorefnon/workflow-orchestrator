@@ -5,7 +5,11 @@ require 'rdoc/task'
 require 'bundler'
 Bundler.setup
 
-task :default => [:test]
+if !ENV["APPRAISAL_INITIALIZED"] && !ENV["TRAVIS"]
+  task :default => :appraisal
+else
+  task :default => [:test]
+end
 
 require 'rake'
 Rake::TestTask.new do |t|
