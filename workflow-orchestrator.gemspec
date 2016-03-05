@@ -33,6 +33,5 @@ DOC
   gem.add_development_dependency 'test-unit'
   gem.add_development_dependency 'ruby-graphviz', ['~> 1.0.0']
   
-  gem.required_ruby_version = '>= 2.0.0'
+  gem.required_ruby_version = '>= 2.1.8'
 end
-
