@@ -6,6 +6,10 @@ rvm:
 gemfile:
   - gemfiles/Gemfile.rails-edge
 
+addons:
+  code_climate:
+    repo_token: 56d06c727f742b00720004db
+
 matrix:
   include:
     - rvm: 2.0.0

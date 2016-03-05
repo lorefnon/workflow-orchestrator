@@ -1,6 +1,9 @@
 require 'rubygems'
 require 'test/unit'
 require 'active_record'
+require 'codeclimate-test-reporter'
+
+CodeClimate::TestReporter.start
 
 class << Test::Unit::TestCase
   def test(name, &block)
