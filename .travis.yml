@@ -3,8 +3,13 @@ before_install:
 
 rvm:
   - 2.0.0
+
 gemfile:
-  - gemfiles/Gemfile.rails-edge
+  - gemfiles/rails_3.gemfile
+  - gemfiles/rails_4.0.gemfile
+  - gemfiles/rails_4.1.gemfile
+  - gemfiles/rails_4.2.gemfile
+  - gemfiles/rails_edge.gemfile
 
 addons:
   code_climate:
