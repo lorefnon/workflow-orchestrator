@@ -1,0 +1,72 @@
+PATH
+  remote: ../
+  specs:
+    workflow-orchestrator (1.3.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activemodel (4.2.5.2)
+      activesupport (= 4.2.5.2)
+      builder (~> 3.1)
+    activerecord (4.2.5.2)
+      activemodel (= 4.2.5.2)
+      activesupport (= 4.2.5.2)
+      arel (~> 6.0)
+    activesupport (4.2.5.2)
+      i18n (~> 0.7)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
+    appraisal (2.1.0)
+      bundler
+      rake
+      thor (>= 0.14.0)
+    arel (6.0.3)
+    builder (3.2.2)
+    codeclimate-test-reporter (0.5.0)
+      simplecov (>= 0.7.1, < 1.0.0)
+    docile (1.1.5)
+    i18n (0.7.0)
+    json (1.8.3)
+    metaclass (0.0.4)
+    minitest (5.1.0)
+    mocha (1.1.0)
+      metaclass (~> 0.0.1)
+    protected_attributes (1.1.3)
+      activemodel (>= 4.0.1, < 5.0)
+    rake (10.5.0)
+    rdoc (4.2.2)
+      json (~> 1.4)
+    ruby-graphviz (1.0.9)
+    simplecov (0.11.2)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
+    sqlite3 (1.3.11)
+    thor (0.19.1)
+    thread_safe (0.3.5)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activerecord (~> 4.1)
+  appraisal
+  bundler (>= 1.0.0)
+  codeclimate-test-reporter
+  minitest (~> 5.1.0)
+  mocha
+  protected_attributes
+  rake
+  rdoc (>= 3.12)
+  ruby-graphviz (~> 1.0.0)
+  sqlite3
+  workflow-orchestrator!
+
+BUNDLED WITH
+   1.11.2

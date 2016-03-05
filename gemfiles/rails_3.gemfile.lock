@@ -1,0 +1,68 @@
+PATH
+  remote: ../
+  specs:
+    workflow-orchestrator (1.3.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activemodel (3.2.22.1)
+      activesupport (= 3.2.22.1)
+      builder (~> 3.0.0)
+    activerecord (3.2.22.1)
+      activemodel (= 3.2.22.1)
+      activesupport (= 3.2.22.1)
+      arel (~> 3.0.2)
+      tzinfo (~> 0.3.29)
+    activesupport (3.2.22.1)
+      i18n (~> 0.6, >= 0.6.4)
+      multi_json (~> 1.0)
+    appraisal (2.1.0)
+      bundler
+      rake
+      thor (>= 0.14.0)
+    arel (3.0.3)
+    builder (3.0.4)
+    codeclimate-test-reporter (0.5.0)
+      simplecov (>= 0.7.1, < 1.0.0)
+    docile (1.1.5)
+    i18n (0.7.0)
+    json (1.8.3)
+    metaclass (0.0.4)
+    mocha (1.1.0)
+      metaclass (~> 0.0.1)
+    multi_json (1.11.2)
+    power_assert (0.2.7)
+    rake (10.5.0)
+    rdoc (4.2.2)
+      json (~> 1.4)
+    ruby-graphviz (1.0.9)
+    simplecov (0.11.2)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
+    sqlite3 (1.3.11)
+    test-unit (3.1.7)
+      power_assert
+    thor (0.19.1)
+    tzinfo (0.3.46)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activerecord (~> 3.2)
+  appraisal
+  bundler (>= 1.0.0)
+  codeclimate-test-reporter
+  mocha
+  rake
+  rdoc (>= 3.12)
+  ruby-graphviz (~> 1.0.0)
+  sqlite3
+  test-unit
+  workflow-orchestrator!
+
+BUNDLED WITH
+   1.11.2
