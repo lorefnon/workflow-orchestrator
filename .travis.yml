@@ -14,32 +14,3 @@ gemfile:
 addons:
   code_climate:
     repo_token: 56d06c727f742b00720004db
-
-matrix:
-  include:
-    - rvm: 2.0.0
-      gemfile: gemfiles/Gemfile.rails-3.x
-
-    - rvm: 2.0.0
-      gemfile: gemfiles/Gemfile.rails-4.0
-
-    - rvm: 2.1.6
-      gemfile: gemfiles/Gemfile.rails-3.x
-
-    - rvm: 2.1.6
-      gemfile: gemfiles/Gemfile.rails-4.1
-
-    - rvm: 2.2.2
-      gemfile: gemfiles/Gemfile.rails-4.1
-
-    - rvm: 2.1.6
-      gemfile: gemfiles/Gemfile.rails-4.2
-
-    - rvm: 2.2.2
-      gemfile: gemfiles/Gemfile.rails-4.2
-
-    - rvm: 2.2.3
-      gemfile: gemfiles/Gemfile.rails-4.2
-
-    - rvm: 2.2.4
-      gemfile: gemfiles/Gemfile.rails-4.2
